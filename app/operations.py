@@ -1,8 +1,4 @@
-# app/operations.py
-
 """
-Module: operations.py
-
 This module contains basic arithmetic functions that perform addition, subtraction,
 multiplication, and division of two numbers. These functions are foundational for
 building more complex applications, such as calculators or financial tools.
