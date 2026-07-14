@@ -1,4 +1,6 @@
-FROM python:3.11-slim
+# 3.12-slim matches the interpreter CI tests against; the image previously
+# ran 3.11 while tests validated 3.12.
+FROM python:3.12-slim
 
 WORKDIR /app
 
