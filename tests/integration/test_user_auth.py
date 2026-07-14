@@ -74,3 +74,10 @@ def test_inactive_user_is_forbidden_not_unauthorized(db, registered):
     with pytest.raises(HTTPException) as excinfo:
         get_current_active_user(current_user=stale)
     assert excinfo.value.status_code == 403
+    
+    
+def test_active_user_passes_through_active_gate(db, registered):
+    token = issue_access_token(registered.id)
+    current = get_current_user(db=db, token=token)
+    result = get_current_active_user(current_user=current)
+    assert result is current
